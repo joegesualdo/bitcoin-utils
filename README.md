@@ -5,7 +5,7 @@
 > Add package to Cargo.toml file
 ```rust
 [dependencies]
-bitcoin-utils = "0.1.0"
+bitcoin-utils = "0.1.1"
 ```
 
 ## Usage:

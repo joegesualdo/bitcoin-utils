@@ -1,6 +1,6 @@
 [package]
 name = "bitcoin-utils"
-version = "0.1.0"
+version = "0.1.1"
 edition = "2021"
 description = "A collection of utilities for working with bitcoin"
 license = "MIT"
@@ -9,7 +9,7 @@ license = "MIT"
 
 [dependencies]
 bitcoin = "=0.29.1"
-hex-utilities = "=0.1.4"
+hex-utilities = "=0.1.5"
 sha2 = "=0.10.5"
 secp256k1 = { version = "0.24.0", features = ["rand"]}
 bitcoin-address = "=0.1.4"
