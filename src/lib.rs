@@ -33,6 +33,17 @@ pub fn concat_u8(first: &[u8], second: &[u8]) -> Vec<u8> {
     [first, second].concat()
 }
 
+pub fn sha256_non_hex(non_hex_string_to_hash: &str) -> String {
+    let byte_array = non_hex_string_to_hash.as_bytes();
+    let mut hasher = Sha256::new();
+    // write input message
+    hasher.update(&byte_array);
+    // read hash digest and consume hasher
+    let sha256_result = hasher.finalize();
+    let sha256_result_array = sha256_result.to_vec();
+    let hex_result = encode_hex(&sha256_result_array);
+    hex_result
+}
 pub fn sha256_hex(hex_to_hash: &String) -> String {
     let hex_byte_array = decode_hex(&hex_to_hash).unwrap();
     let mut hasher = Sha256::new();
