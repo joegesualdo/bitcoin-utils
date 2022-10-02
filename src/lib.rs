@@ -416,8 +416,129 @@ mod tests {
     use super::*;
 
     #[test]
-    fn it_works() {
-        // let result = add(2, 2);
-        // assert_eq!(result, 4);
+    fn concat_u8_works() {
+        let a: [u8; 1] = [1];
+        let b: [u8; 1] = [2];
+        let result = concat_u8(&a, &b);
+        assert_eq!(result, vec![1, 2]);
+    }
+    #[test]
+    fn sha256_non_hex_works() {
+        let to_test = "Hello there!";
+        let result = sha256_non_hex(to_test);
+        assert_eq!(
+            result,
+            "89b8b8e486421463d7e0f5caf60fb9cb35ce169b76e657ab21fc4d1d6b093603"
+        );
+    }
+    #[test]
+    fn sha256_hex_works() {
+        let to_test = "00000000000000000005745ae54625e89c79fcf69cb2087439d91ade5e989007";
+        let result = sha256_hex(&to_test.to_string());
+        assert_eq!(
+            result,
+            "4bb4323b3d9e33fe537a41020350c108a507c82f0d3cacfabcfd7700873c14ce"
+        );
+    }
+    #[test]
+    fn double_sha256_hex_works() {
+        let to_test = "00000000000000000005745ae54625e89c79fcf69cb2087439d91ade5e989007";
+        let result = double_sha256_hex(&to_test.to_string());
+        assert_eq!(
+            result,
+            "8e2c9bf7930c67968a36f71ba9dc978944ab7ef7b04633cdebac10084ee93f6b"
+        );
+    }
+    #[test]
+    fn get_compressed_public_key_from_private_key_works() {
+        unimplemented!()
+    }
+    #[test]
+    fn get_wif_from_private_key_works() {
+        unimplemented!()
+    }
+    #[test]
+    fn get_p2sh_address_from_script_hash_works() {
+        unimplemented!()
+    }
+    #[test]
+    fn get_p2sh_address_from_pubkey_hash_works() {
+        unimplemented!()
+    }
+    #[test]
+    fn get_p2pkh_address_from_pubkey_hash_works() {
+        unimplemented!()
+    }
+    #[test]
+    fn get_p2tr_address_from_pubkey_works() {
+        unimplemented!()
+    }
+    #[test]
+    fn get_p2wpkh_address_from_pubkey_hash_works() {
+        unimplemented!()
+    }
+    #[test]
+    fn get_address_from_pub_key_hash_works() {
+        unimplemented!()
+    }
+    #[test]
+    fn get_bech32_address_from_witness_program_works() {
+        unimplemented!()
+    }
+    #[test]
+    fn get_tweaked_x_only_public_key_from_p2tr_address_works() {
+        unimplemented!()
+    }
+    #[test]
+    fn get_pubkey_hash_from_p2wpkh_address_works() {
+        unimplemented!()
+    }
+    #[test]
+    fn get_address_from_pub_key_works() {
+        unimplemented!()
+    }
+    #[test]
+    fn get_public_key_from_wif_works() {
+        unimplemented!()
+    }
+    #[test]
+    fn is_wif_compressed_works() {
+        unimplemented!()
+    }
+    #[test]
+    fn get_public_key_from_private_key_works() {
+        unimplemented!()
+    }
+    #[test]
+    fn hash160_for_non_hex_works() {
+        unimplemented!()
+    }
+    #[test]
+    fn hash160_for_hex_works() {
+        unimplemented!()
+    }
+    #[test]
+    fn get_tweaked_x_only_public_key_from_public_key_works() {
+        unimplemented!()
+    }
+    #[test]
+    fn get_public_key_hash_from_public_key_works() {
+        unimplemented!()
+    }
+    #[test]
+    fn get_script_hash_from_p2sh_address_woks() {
+        unimplemented!()
+    }
+    #[test]
+    fn get_public_key_hash_from_non_bech_32_address_works() {
+        unimplemented!()
+    }
+    #[test]
+    fn get_public_key_hash_from_address_works() {
+        unimplemented!()
+    }
+    #[test]
+    fn convert_wif_to_private_key_works() {
+        unimplemented!()
     }
 }
